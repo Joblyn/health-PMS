@@ -2,16 +2,20 @@ import React from "react";
 import { Redirect } from "react-router-dom";
 
 // Layout Types
-import { DefaultLayout } from "./layouts";
+import { DefaultLayout, Plain } from "./layouts";
 
 // Route Views
-import BlogOverview from "./views/BlogOverview";
-import UserProfileLite from "./views/UserProfileLite";
-import AddNewPost from "./views/AddNewPost";
-import Errors from "./views/Errors";
-import ComponentsOverview from "./views/ComponentsOverview";
-import Tables from "./views/Tables";
-import BlogPosts from "./views/BlogPosts";
+import BlogOverview from "./pages/BlogOverview";
+import UserProfileLite from "./pages/UserProfileLite";
+import AddNewPost from "./pages/AddNewPost";
+import Errors from "./pages/Errors";
+import ComponentsOverview from "./pages/ComponentsOverview";
+import Tables from "./pages/Tables";
+import BlogPosts from "./pages/BlogPosts";
+import Home from "./pages/Home";
+import PageNotFound from "./pages/404";
+import DieticianLogin from "./pages/dietician/LogIn";
+import PatientLogin from "./pages/patient/LogIn" 
 
 export default [
   {
@@ -57,4 +61,24 @@ export default [
   },
 
   // edit
+  {
+    path: "/home",
+    layout: Plain,
+    component: Home
+  },
+  {
+    path: "/dietician/login",
+    layout: Plain,
+    component: DieticianLogin
+  },
+  {
+    path: "/patient/login",
+    layout: Plain,
+    component: PatientLogin
+  }
+  // {
+  //   path: "*",
+  //   layout: Plain,
+  //   component: PageNotFound  
+  // }
 ];

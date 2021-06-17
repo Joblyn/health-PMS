@@ -1,3 +1,4 @@
 import DefaultLayout from "./Default";
+import Plain from "./Plain";
 
-export { DefaultLayout };
+export { DefaultLayout, Plain };
