@@ -33,7 +33,7 @@ const Colors = () => (
     <Col className="mb-4">
       <div
         className="bg-info text-white text-center rounded p-3"
-        style={{ boxShadow: "inset 0 0 5px rgba(0,0,0,.2)" }}>
+        style={{ boxShadow: "inset 0 0 5px rgba(0,0,0,.2)"}}>
         Info
       </div>
     </Col>

@@ -6,7 +6,8 @@ import getSidebarNavItems from "../data/sidebar-nav-items";
 
 let _store = {
   menuVisible: false,
-  navItems: getSidebarNavItems()
+  navItems: getSidebarNavItems(),
+  formItems: [{type:"text"}],
 };
 
 class Store extends EventEmitter {
@@ -15,8 +16,10 @@ class Store extends EventEmitter {
 
     this.registerToActions = this.registerToActions.bind(this);
     this.toggleSidebar = this.toggleSidebar.bind(this);
+    this.addFormItem = this.addFormItem.bind(this);
 
     Dispatcher.register(this.registerToActions.bind(this));
+    Dispatcher.register(this.addFormItem.bind(this));
   }
 
   registerToActions({ actionType, payload }) {
@@ -32,6 +35,22 @@ class Store extends EventEmitter {
     _store.menuVisible = !_store.menuVisible;
     this.emit(Constants.CHANGE);
   }
+
+  addFormItem(actionType, payload) {
+    // debugger;
+    switch (actionType) {
+      case Constants.ADD_ITEM:
+        _store.formItems = [..._store.formItems, payload];
+        break;
+      default:
+    }
+  }
+
+  // edit
+  getFormItems() {
+    return _store.formItems;
+  }
+  //
 
   getMenuState() {
     return _store.menuVisible;

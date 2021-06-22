@@ -49,6 +49,7 @@ class SidebarMainNavbar extends React.Component {
           <a
             className="toggle-sidebar d-sm-inline d-md-none d-lg-none"
             onClick={this.handleToggleSidebar}
+            style={{color: "#52b5e9"}}
           >
             <i className="material-icons">&#xE5C4;</i>
           </a>

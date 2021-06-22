@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Col, Row } from "shards-react";
+import { Col, Row } from "shards-react";
 import { Link } from "react-router-dom";
 
 export default function Home() {
@@ -19,7 +19,7 @@ export default function Home() {
           <h4 className="mb-4 text-left">Continue as:</h4>
           <Row className="d-flex justify-content-center">
             <Col className="d-flex flex-column justify-content-center col-lg 6 col-md-6 col-sm-12">
-              <Link to="#">
+              <Link to="/dietician/login">
                 <div className="home-link d-flex flex-column align-items-center">
                   <img
                     id="dietician-avatar"
@@ -45,7 +45,7 @@ export default function Home() {
               </Link>
             </Col>
             <Col className="d-flex flex-column justify-content-center col-lg 6 col-md-6 col-sm-12">
-              <Link to="#">
+              <Link to="/patient/login">
                 <div className="d-flex flex-column align-items-center">
                   <img
                     id="patient-avatar"

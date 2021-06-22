@@ -1,10 +1,39 @@
 export default function() {
   return [
     {
+      title: "Profile",
+      htmlBefore: '<i class="material-icons">person</i>',
+      to: "/user-profile-lite",
+    },
+    {
+      title: "Patients",
+      htmlBefore: '<i class="material-icons">groups</i>',
+      to: "/dietician/patients",
+    },
+    {
+      title: "Upload Diet Plan",
+      htmlBefore: '<i class="material-icons">post_add</i>',
+      to: "/dietician/upload_diet_plan"
+    },
+    {
+      title: "Create Intake Flow Progress Form",
+      htmlBefore: '<i class="material-icons">assignment</i>',
+      to: "/dietician/progress_flow_intake_form"
+    },
+    {
+      title: "Appointments",
+      htmlBefore: '<i class="material-icons">schedule</i>',
+      to: "/dietician/appointments"
+    },
+    {
+      title: "Documents",
+      htmlBefore: "<i class='material-icons'>folder</i>",
+      to: "/dietician/documents"
+    },
+    {
       title: "Blog Dashboard",
       to: "/blog-overview",
       htmlBefore: '<i class="material-icons">edit</i>',
-      htmlAfter: ""
     },
     {
       title: "Blog Posts",
@@ -25,11 +54,6 @@ export default function() {
       title: "Tables",
       htmlBefore: '<i class="material-icons">table_chart</i>',
       to: "/tables",
-    },
-    {
-      title: "User Profile",
-      htmlBefore: '<i class="material-icons">person</i>',
-      to: "/user-profile-lite",
     },
     {
       title: "Errors",

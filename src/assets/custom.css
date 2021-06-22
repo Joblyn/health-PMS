@@ -1,0 +1,66 @@
+/* .bg-custom {
+  background-color: #52b5e9!important;
+
+};
+
+.bg-custom :hover {
+  background-color: #52b5e9!important;
+}
+
+.btn-custom {
+  border-color: #52b5e9!important;
+} */
+
+body {
+  font-size: 1rem;
+};
+
+.form-custom {
+  padding: .5rem .75rem!important;
+  font-size: .9rem!important;
+};
+
+.main-navbar .navbar .nav-link {
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #3c8db9;
+  border-color: #3c8db9;
+};
+
+.btn-primary.focus, .btn-primary:focus {
+  background-color: #176b99;
+  border-color: #176b99;
+}
+
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle  {
+  background-color: #176b99;
+  border-color: #176b99;
+}
+
+.custom-control-input:disabled~.custom-control-label::before {
+    background-color: #fff;
+}
+
+.form-item:hover {
+  cursor: pointer;
+  box-shadow: 0 0.46875rem 2.1875rem rgb(90 97 105 / 10%), 0 0.9375rem 1.40625rem rgb(90 97 105 / 10%), 0 0.25rem 0.53125rem rgb(90 97 105 / 12%), 0 0.125rem 0.1875rem rgb(90 97 105 / 10%);
+}
+
+.form-item label, .form-item input, .form-item textarea {
+  cursor: pointer!important;
+}
+
+#progress-intake-form .form-group .label-input:focus{
+  box-shadow: none;
+}
+
+.label-input {
+  border-left: 0!important;
+  border-right: 0!important;
+  border-top: 0!important;
+  border-radius: 0!important;
+  font-weight: 400!important;
+}
+

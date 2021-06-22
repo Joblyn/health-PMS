@@ -6,11 +6,11 @@ import {
   FormSelect
 } from "shards-react";
 
-const CustomSelect = () => (
+const CustomSelect = ({ label, options={}}) => (
   <div>
     <InputGroup className="mb-3">
       <InputGroupAddon type="prepend">
-        <InputGroupText>Options</InputGroupText>
+        <InputGroupText>{label}</InputGroupText>
       </InputGroupAddon>
       <FormSelect>
         <option>Choose</option>
@@ -18,7 +18,7 @@ const CustomSelect = () => (
       </FormSelect>
     </InputGroup>
 
-    <InputGroup className="mb-3">
+    {/* <InputGroup className="mb-3">
       <FormSelect>
         <option>Choose</option>
         <option>...</option>
@@ -26,7 +26,7 @@ const CustomSelect = () => (
       <InputGroupAddon type="append">
         <InputGroupText>Options</InputGroupText>
       </InputGroupAddon>
-    </InputGroup>
+    </InputGroup> */}
   </div>
 );
 
