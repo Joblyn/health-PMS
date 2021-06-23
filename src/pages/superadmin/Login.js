@@ -6,20 +6,29 @@ import {
   FormGroup,
   FormInput,
   Col,
+  FormFeedback,
 } from "shards-react";
-import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import { login } from "../../actions/auth";
+import { useHistory } from "react-router-dom";
+import { loginEndpoint } from "../../apiConstants/apiConstants";
 
-import { login } from '../../actions/auth';
-import { loginEndpoint } from '../../apiConstants/apiConstants';
-
-export default function DieticianLogin() {
+export default function SuperAdminLogin() {
   const [control, setControl] = useState();
+  const [errorMessage, setErrorMessage] = useState();
   const dispatch = useDispatch();
   const authState = useSelector(state => state.authState);
+  const history = useHistory();
+
 
   useEffect(() => {
-    console.log(authState); 
+    if(authState.isSuccessful && authState.isLoggedIn) {
+      localStorage.setItem('token', JSON.stringify(authState.data.token));
+      localStorage.setItem('loggedInUser', JSON.stringify(authState.data.userDetails));
+      history.push('/superadmin/dashboard');
+    } else if (authState.isSuccessful === false && authState.error) {
+      setErrorMessage(authState.error);
+    }
   }, [authState]);
 
   const handleChange = ({ target }) => {
@@ -27,10 +36,10 @@ export default function DieticianLogin() {
       ...control,
       [target.name]: target.value,
     });
-  } 
+  }
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const handleSubmit = (e) => {
+    e.preventDefault();
     dispatch(login(loginEndpoint, control));
   }
 
@@ -47,43 +56,39 @@ export default function DieticianLogin() {
         }}
       >
         <h4 className="mb-4 text-center">Login</h4>
-        <Form id="dietician_Login" onSubmit={handleSubmit}>
+        <Form id="superAdmin_login" onSubmit={handleSubmit}>
+          {errorMessage && <FormFeedback>{errorMessage}</FormFeedback>}
           <FormGroup>
             <label htmlFor="emailAdress" style={{ fontSize: "1rem" }}>
               Email
             </label>
             <FormInput
-              required
-              onChange={handleChange}
               id="emailAddress"
-              name="emailAddressInput"
+              name="email"
               type="email"
               placeholder="Email"
               className="form-custom"
               style={{ padding: ".5rem .75rem", fontSize: ".9rem" }}
+              onChange={handleChange}
             />
           </FormGroup>
           <FormGroup>
             <label htmlFor="password">Password</label>
             <FormInput
-              required
-              onChange={handleChange}
               id="password"
-              name="passwordInput"
+              name="password"
               type="password"
               placeholder="Password"
               style={{ padding: ".5rem .75rem", fontSize: ".9rem" }}
+              onChange={handleChange}
             />
           </FormGroup>
-          <Col className="text-right form-group">
-            <Link to="#">Forgot password?</Link>
-          </Col>
           <Col className="p-0">
             <Button
               type="submit"
               className="w-100 bg-custom btn-custom"
               style={{ fontSize: "1rem" }}
-              form="dietician_Login"
+              form="superAdmin_login"
             >
               Log In
             </Button>

@@ -9,7 +9,7 @@ import Errors from "./pages/Errors";
 import ComponentsOverview from "./pages/ComponentsOverview";
 import Tables from "./pages/Tables";
 import BlogPosts from "./pages/BlogPosts";
-import Home from "./pages/Home";
+import Interface from "./pages/Interface";
 import PageNotFound from "./pages/404";
 import DieticianLogin from "./pages/dietician/LogIn";
 import PatientLogin from "./pages/patient/LogIn" 
@@ -18,13 +18,27 @@ import RegisterPatient from "./pages/dietician/RegisterPatient";
 import UploadDietPlan from './pages/dietician/UploadDietPlan';
 import Patients from './pages/dietician/Patients'; 
 import CreateProgressFlowIntakeForm from "./pages/dietician/CreateProgressFlowIntakeForm.js";
+import Landing from './pages/Landing';
+import RegisterCompany from './pages/superadmin/RegisterCompany';
+import SuperAdminLogin from './pages/superadmin/Login';
+import CompanyPatients from './pages/superadmin/Patients';
 
 export default [
   {
-    path: "/",
+    path: '/',
     exact: true,
     layout: Plain,
-    component: Home
+    component: Landing
+  },    
+  {
+    path: "/interface",
+    layout: Plain,
+    component: Interface
+  },
+  {
+    path: "/register_company",
+    layout: Plain,
+    component: RegisterCompany
   },
   {
     path: "/blog-overview",
@@ -64,9 +78,24 @@ export default [
 
   // edit
   {
+    path: "/superadmin/login",
+    layout: Plain,
+    component: SuperAdminLogin
+  },
+  {
+    path: "/superadmin/dashboard",
+    layout: DefaultLayout,
+    component: ComponentsOverview,
+  },
+  {
     path: "/dietician/login",
     layout: Plain,
     component: DieticianLogin
+  },
+  {
+    path: "/superadmin/patients",
+    layout: DefaultLayout,
+    component: CompanyPatients,
   },
   {
     path: "/patient/login",
