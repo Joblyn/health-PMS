@@ -116,9 +116,9 @@ export function getSuperAdminNavItems() {
           to: `/superadmin/dietitians`,
         },
         {
-          title: "Create Dietitian",
+          title: "Create User",
           htmlBefore: '<i class="material-icons">person_add_alt</i>',
-          to: `/superadmin/create_dietitian`,
+          to: `/superadmin/create_user`,
         },
         {
           title: "Create Patient",

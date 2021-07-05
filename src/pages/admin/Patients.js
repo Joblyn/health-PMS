@@ -15,7 +15,7 @@ export default function CompanyPatients() {
   const history = useHistory();
   const dispatch = useDispatch();
   const allPatients = useSelector((state) => state.allPatients);
-  const [patients, setPatients] = useState([]);
+  const [patients, setPatients] = useState();
 
   useEffect(() => {
     let endpoint = getPatients + companyCode;
@@ -62,7 +62,7 @@ export default function CompanyPatients() {
                           position: "absolute",
                           top: "10px",
                           right: "10px",
-                          color: "#660066",
+                          color: "#52b5e9",
                         }}
                       >
                         {patient.Dietitian !== undefined

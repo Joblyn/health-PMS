@@ -3,6 +3,8 @@ let prodUrl = 'https://dev-workcradle.herokuapp.com/api/';
 
 export let baseUrl = process.env.NODE_ENV === 'production' ? prodUrl : localUrl;
 
+export const statsEndpoint = 'Stats/GetSuperAdminStats/';
+
 // get all companies
 export let allCompanies = 'Company/GetAllCompany';
 

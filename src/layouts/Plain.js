@@ -1,14 +1,21 @@
 import React from "react";
 import { Container } from "shards-react";
 import { Link, Redirect } from "react-router-dom";
-import logo from "../images/logo.jpg";
-import { useSelector } from "react-redux";
+import logo from "../images/logo-900.png";
 
 export default function Plain({ children }) {
   const authState = JSON.parse(localStorage.getItem('loggedInUser'))
 
-  if(authState && authState.role){
-    return <Redirect to={`/${authState.data.user.role}/profile`}/>
+  if(authState && authState.role){  
+    if(authState.role === 'admin') {
+      return authState.isSuperAdmin ? <Redirect to="/superadmin/dashboard" />: <Redirect to="/admin/profile"/>
+    }
+    if (authState.role === 'dietitian') {
+      return <Redirect to="/dietitian/profile" />
+    }
+    if(authState.role === 'patient') {
+     return <Redirect to="/patient/profile" />
+    }
   }
 
   return (
@@ -18,12 +25,9 @@ export default function Plain({ children }) {
           <img
             id="main-logo"
             className="d-inline-block align-middle mx-auto"
-            style={{ maxWidth: "90px" }}
-            // src={require("../images/logo-1200.png")}
-            // src='../images/logo.jpg'
+            style={{ maxWidth: "150px" }}
             src={logo}
-            // alt="workcradle"
-            alt="tnnafrica"
+            alt="health.workcradle"
           />
         </Link>
       </div>

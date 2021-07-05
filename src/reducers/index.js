@@ -34,6 +34,7 @@ import getIntakeInfosReducer from './patient/getIntakeInfos';
 import createAppointmentReducer from './patient/createAppointment';
 import updateAppointmentReducer from './patient/updateAppointment';
 import deleteAppointmentReducer from './patient/deleteAppoinment';
+import statsReducer from './Superadmin/stats';
 
 
 export default combineReducers({
@@ -70,6 +71,7 @@ export default combineReducers({
   createAppointment: createAppointmentReducer,
   updateAppointment: updateAppointmentReducer,
   deleteAppointment: deleteAppointmentReducer,
-  
+  stats: statsReducer,
+
   errors: errorReducer
 })

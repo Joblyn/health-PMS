@@ -9,11 +9,11 @@ import { useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 
 const DefaultLayout = ({ children, noNavbar, noFooter }) => {
-  const authState = useSelector(state => state.authState);
+  // const authState = useSelector(state => state.authState);
 
-  if(!authState.isLoggedIn || authState.data.user.role !== 'admin') {
-    return <Redirect to="/"/>
-  }
+  // if(!authState.isLoggedIn || authState.data.user.role !== 'admin') {
+  //   return <Redirect to="/"/>
+  // }
 
   return (
     <Container fluid>

@@ -40,7 +40,7 @@ class SidebarMainNavbar extends React.Component {
                 // src='../images/logo.jpg'
                 src={logo}
                 // alt="workcradle"
-                alt="tnnafrica"
+                alt="health.workcradle"
               />
               {!hideLogoText && (
                 <span className="d-none d-md-inline ml-1">

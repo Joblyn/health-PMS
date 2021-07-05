@@ -29,7 +29,7 @@ export default function DietitianLogin() {
         localStorage.setItem("loggedInUser",JSON.stringify(authState.data.user));
         localStorage.setItem('role', authState.data.user.role);
         setErrorMessage(false);
-        history.push("/admin/profile");
+        authState.data.user.isSuperAdmin ? history.push('/superadmin/profile') : history.push("/admin/profile");
       } else {
         if(submitted) {
           setErrorMessage('Invalid email or password');

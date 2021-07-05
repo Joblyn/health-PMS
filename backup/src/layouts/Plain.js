@@ -16,7 +16,7 @@ export default function Plain({ children }) {
             // src='../images/logo.jpg'
             src={logo}
             // alt="workcradle"
-            alt="tnnafrica"
+            alt="health.workcradle"
           />
         </Link>
       </div>

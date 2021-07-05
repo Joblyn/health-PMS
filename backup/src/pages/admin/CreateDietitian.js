@@ -97,7 +97,7 @@ export default function CreateDietitian() {
       <Row noGutters className="page-header py-4">
         <PageTitle
           sm="4"
-          title="Create Dietitian"
+          title="Create User"
           subtitle="Dashboard"
           className="text-sm-left"
         />
@@ -195,7 +195,7 @@ export default function CreateDietitian() {
                 style={{ fontSize: "1rem" }}
                 form="dietician_Login"
               >
-                Create Dietitian
+                Create User
               </Button>
             </Col>
             {errorMessage && (

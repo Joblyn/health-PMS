@@ -45,7 +45,7 @@ export default function Interface() {
                 height="auto"
                 src={require("../images/avatars/portrait.jpg")}
                 l
-                alt="tnnafrica.workcradle"
+                alt="health.workcradle"
               />
               <p
                 style={{
@@ -81,7 +81,7 @@ export default function Interface() {
                 height="auto"
                 src={require("../images/avatars/portrait.jpg")}
                 l
-                alt="tnnafrica.workcradle"
+                alt="health.workcradle"
               />
               <p
                 style={{
