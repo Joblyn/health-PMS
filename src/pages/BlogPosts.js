@@ -206,7 +206,7 @@ class BlogPosts extends React.Component {
                   </Badge>
                   <div className="card-post__author d-flex">
                     <a
-                      href="#"
+                      
                       className="card-post__author-avatar card-post__author-avatar--small"
                       style={{ backgroundImage: `url('${post.authorAvatar}')` }}
                     >
@@ -216,7 +216,7 @@ class BlogPosts extends React.Component {
                 </div>
                 <CardBody>
                   <h5 className="card-title">
-                    <a href="#" className="text-fiord-blue">
+                    <a  className="text-fiord-blue">
                       {post.title}
                     </a>
                   </h5>
@@ -245,7 +245,7 @@ class BlogPosts extends React.Component {
                   </Badge>
                   <div className="card-post__author d-flex">
                     <a
-                      href="#"
+                      
                       className="card-post__author-avatar card-post__author-avatar--small"
                       style={{ backgroundImage: `url('${post.authorAvatar}')` }}
                     >
@@ -255,7 +255,7 @@ class BlogPosts extends React.Component {
                 </div>
                 <CardBody>
                   <h5 className="card-title">
-                    <a className="text-fiord-blue" href="#">
+                    <a className="text-fiord-blue" >
                       {post.title}
                     </a>
                   </h5>
@@ -279,7 +279,7 @@ class BlogPosts extends React.Component {
                 <CardFooter className="border-top d-flex">
                   <div className="card-post__author d-flex">
                     <a
-                      href="#"
+                      
                       className="card-post__author-avatar card-post__author-avatar--small"
                       style={{ backgroundImage: `url('${post.authorAvatar}')` }}
                     >
@@ -314,7 +314,7 @@ class BlogPosts extends React.Component {
                 />
                 <CardBody>
                   <h5 className="card-title">
-                    <a className="text-fiord-blue" href="#">
+                    <a className="text-fiord-blue" >
                       {post.title}
                     </a>
                   </h5>

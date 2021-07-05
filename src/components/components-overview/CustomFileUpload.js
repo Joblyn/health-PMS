@@ -1,9 +1,9 @@
 import React from "react";
 
-const CustomFileUpload = ({label, handleChange}) => {
+const CustomFileUpload = ({label, id, ...restProps }) => {
   return (
   <div className="custom-file">
-    <input type="file" className="custom-file-input" id="customFile2" onChange={handleChange}/>
+    <input type="file" className="custom-file-input" id={id} {...restProps}/>
     <label className="custom-file-label" htmlFor="customFile2">
       {label}
     </label>

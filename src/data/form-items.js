@@ -14,6 +14,12 @@ export default [
     component: FormTextarea,
   },
   {
+    type: "date",
+    title: "Date",
+    placeholder: 'DD/MM/YY',
+    component: FormInput,
+  },
+  {
     type: "checkbox",
     title: "Multiple Choice(Checkbox)",
     options: ["a", "b", "c"],

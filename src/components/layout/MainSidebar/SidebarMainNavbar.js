@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { Navbar, NavbarBrand } from "shards-react";
 
 import { Dispatcher, Constants } from "../../../flux";
+import logo from "../../../images/logo.jpg";
 
 class SidebarMainNavbar extends React.Component {
   constructor(props) {
@@ -13,7 +14,7 @@ class SidebarMainNavbar extends React.Component {
 
   handleToggleSidebar() {
     Dispatcher.dispatch({
-      actionType: Constants.TOGGLE_SIDEBAR
+      actionType: Constants.TOGGLE_SIDEBAR,
     });
   }
 
@@ -26,17 +27,17 @@ class SidebarMainNavbar extends React.Component {
           type="light"
         >
           <NavbarBrand
-            className="w-100 mr-0"
-            href="#"
+            className="w-100 mr-0 p-0"
+            // href=""
             style={{ lineHeight: "25px" }}
           >
             <div className="d-table m-auto">
               <img
                 id="main-logo"
-                className="d-inline-block align-top mr-4"
-                style={{ maxWidth: "150px" }}
-                src={require("../../../images/logo-900.png")}
-                alt="workcradle"
+                className="d-inline-block align-middle mx-auto"
+                style={{ maxWidth: "90px" }}
+                src={logo}
+                alt="tnnafrica"
               />
               {!hideLogoText && (
                 <span className="d-none d-md-inline ml-1">
@@ -46,13 +47,13 @@ class SidebarMainNavbar extends React.Component {
             </div>
           </NavbarBrand>
           {/* eslint-disable-next-line */}
-          <a
+          <div
             className="toggle-sidebar d-sm-inline d-md-none d-lg-none"
             onClick={this.handleToggleSidebar}
-            style={{color: "#52b5e9"}}
+            style={{ color: "#660066" }}
           >
             <i className="material-icons">&#xE5C4;</i>
-          </a>
+          </div>
         </Navbar>
       </div>
     );
@@ -63,11 +64,11 @@ SidebarMainNavbar.propTypes = {
   /**
    * Whether to hide the logo text, or not.
    */
-  hideLogoText: PropTypes.bool
+  hideLogoText: PropTypes.bool,
 };
 
 SidebarMainNavbar.defaultProps = {
-  hideLogoText: false
+  hideLogoText: false,
 };
 
 export default SidebarMainNavbar;

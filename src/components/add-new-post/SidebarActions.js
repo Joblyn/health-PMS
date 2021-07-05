@@ -23,7 +23,7 @@ const SidebarActions = ({ title }) => (
           <span className="d-flex mb-2">
             <i className="material-icons mr-1">flag</i>
             <strong className="mr-1">Status:</strong> Draft{" "}
-            <a className="ml-auto" href="#">
+            <a className="ml-auto" >
               Edit
             </a>
           </span>
@@ -31,14 +31,14 @@ const SidebarActions = ({ title }) => (
             <i className="material-icons mr-1">visibility</i>
             <strong className="mr-1">Visibility:</strong>{" "}
             <strong className="text-success">Public</strong>{" "}
-            <a className="ml-auto" href="#">
+            <a className="ml-auto" >
               Edit
             </a>
           </span>
           <span className="d-flex mb-2">
             <i className="material-icons mr-1">calendar_today</i>
             <strong className="mr-1">Schedule:</strong> Now{" "}
-            <a className="ml-auto" href="#">
+            <a className="ml-auto" >
               Edit
             </a>
           </span>

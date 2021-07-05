@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 
 import { allCompanies } from "../apiConstants/apiConstants";
 import { getAllCompanies } from "../actions/getAllCompanies";
+import PageSpinner from "../components/common/PageSpinner";
 
 export default function Landing() {
   const dispatch = useDispatch();
@@ -16,13 +17,13 @@ export default function Landing() {
   }, []);
 
   useEffect(() => {
-    if (AllCompanies.isSuccessful) {
+    if (AllCompanies.isSuccessful && AllCompanies.data) {
       setCompanies(AllCompanies.data);
     }
   }, [AllCompanies]);
 
   return (
-    <Col className="d-flex justify-content-center py-5">
+    <Col className="d-flex justify-content-center py-5 landing">
       <Row
         noGutters
         className="page-header py-5 px-4 bg-white card landing-cont"
@@ -31,10 +32,10 @@ export default function Landing() {
           Welcome!
         </h2>
         <h4 className="mb-4 text-left">Select Company:</h4>
-        <Row className="d-flex justify-content-center align-items-center">
+        <Row className="d-flex justify-content-center align-items-center" style={{minHeight: '30vh'}}>
           {companies.length ?
             companies.map((item, i) => (
-              <Link to="/interface" key={`item-${i+1}`}>
+              <Link to="/interface" key={`item-${i+1}`} onClick={() => localStorage.setItem('companyCode', item.companyCode)}>
                 <div
                   className="btn-custom bg-custom m-3 btn card d-flex justify-content-center align-items-center btn btn-outline-primary"
                   style={{
@@ -43,14 +44,14 @@ export default function Landing() {
                     fontSize: "1.2rem",
                     width: "200px",
                     height: "200px",
-                    border: "1px solid #52b5e9",
+                    border: "1px solid #660066",
                   }}
                 >
                   {item.name}
                 </div>
               </Link>
-            )) : null}
-            <Link to="/register_company">
+            )) : <PageSpinner />}
+            {/* <Link to="/register_company">
                 <div
                   className="btn-custom bg-custom m-3 btn card d-flex justify-content-center align-items-center btn btn-outline-primary"
                   style={{
@@ -59,13 +60,13 @@ export default function Landing() {
                     fontSize: "1.2rem",
                     width: "200px",
                     height: "200px",
-                    border: "1px solid #52b5e9",
+                    border: "1px solid #660066",
                     boxShadow: "none"
                   }}
                 >
                   <span style={{fontSize: "2.5rem"}}>+</span> Register Company
                 </div>
-              </Link>
+              </Link> */}
         </Row>
       </Row>
     </Col>

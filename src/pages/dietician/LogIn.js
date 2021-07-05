@@ -6,33 +6,54 @@ import {
   FormGroup,
   FormInput,
   Col,
+  FormFeedback,
 } from "shards-react";
-import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import { defaultAuthState, login } from "../../actions/auth";
+import { useHistory } from "react-router-dom";
+import { loginEndpoint } from "../../apiConstants/apiConstants";
 
-import { login } from '../../actions/auth';
-import { loginEndpoint } from '../../apiConstants/apiConstants';
-
-export default function DieticianLogin() {
+export default function DietitianLogin() {
   const [control, setControl] = useState();
+  const [errorMessage, setErrorMessage] = useState(false);
   const dispatch = useDispatch();
-  const authState = useSelector(state => state.authState);
+  const authState = useSelector((state) => state.authState);
+  const history = useHistory();
+  const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
-    console.log(authState); 
-  }, [authState]);
+    if (authState.isSuccessful && authState.isLoggedIn) { 
+      if(authState.data.user.role === 'dietitian'){
+        localStorage.setItem("tokens", JSON.stringify(authState.data.tokens));
+        localStorage.setItem("loggedInUser",JSON.stringify(authState.data.user));
+        localStorage.setItem('role', authState.data.user.role);
+        setErrorMessage(false);
+        history.push("/dietitian/profile");        
+      } else {
+        if(submitted) {
+          setErrorMessage('Invalid email or password');
+          dispatch(defaultAuthState);
+        }
+      }
+    } else if (authState.isSuccessful === false && authState.error) {
+      if(submitted) {
+        setErrorMessage(authState.error);
+      };
+    }
+  }, [authState, submitted]);
 
   const handleChange = ({ target }) => {
     setControl({
       ...control,
       [target.name]: target.value,
     });
-  } 
+  };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const handleSubmit = (e) => {
+    e.preventDefault();
     dispatch(login(loginEndpoint, control));
-  }
+    setSubmitted(true);
+  };
 
   return (
     <Container
@@ -47,43 +68,43 @@ export default function DieticianLogin() {
         }}
       >
         <h4 className="mb-4 text-center">Login</h4>
-        <Form id="dietician_Login" onSubmit={handleSubmit}>
+        <Form id="superAdmin_login" onSubmit={handleSubmit}>
+          {errorMessage && (
+            <FormFeedback style={{ display: "block" }} className="mt-0">
+              {errorMessage}
+            </FormFeedback>
+          )}
           <FormGroup>
             <label htmlFor="emailAdress" style={{ fontSize: "1rem" }}>
               Email
             </label>
             <FormInput
-              required
-              onChange={handleChange}
               id="emailAddress"
-              name="emailAddressInput"
+              name="email"
               type="email"
               placeholder="Email"
               className="form-custom"
               style={{ padding: ".5rem .75rem", fontSize: ".9rem" }}
+              onChange={handleChange}
             />
           </FormGroup>
           <FormGroup>
             <label htmlFor="password">Password</label>
             <FormInput
-              required
-              onChange={handleChange}
               id="password"
-              name="passwordInput"
+              name="password"
               type="password"
               placeholder="Password"
               style={{ padding: ".5rem .75rem", fontSize: ".9rem" }}
+              onChange={handleChange}
             />
           </FormGroup>
-          <Col className="text-right form-group">
-            <Link to="#">Forgot password?</Link>
-          </Col>
           <Col className="p-0">
             <Button
               type="submit"
               className="w-100 bg-custom btn-custom"
               style={{ fontSize: "1rem" }}
-              form="dietician_Login"
+              form="superAdmin_login"
             >
               Log In
             </Button>

@@ -2,12 +2,17 @@ import { EventEmitter } from "events";
 
 import Dispatcher from "./dispatcher";
 import Constants from "./constants";
-import getSidebarNavItems from "../data/sidebar-nav-items";
+// import {getSuperAdminNavItems, getDietitianNavItems, getPatientNavItems } from "../data/sidebar-nav-items";
+import {getAdminNavItems, getPatientNavItems, getDietitianNavItems } from '../data/sidebar-nav-items';
+
+// let role = localStorage.getItem('role');
 
 let _store = {
   menuVisible: false,
-  navItems: getSidebarNavItems(),
-  formItems: [{type:"text"}],
+  navItems: getAdminNavItems(),
+  dietitianNavItems: getDietitianNavItems(),
+  patientNavItems: getPatientNavItems(),
+  // formItems: [],
 };
 
 class Store extends EventEmitter {
@@ -16,10 +21,10 @@ class Store extends EventEmitter {
 
     this.registerToActions = this.registerToActions.bind(this);
     this.toggleSidebar = this.toggleSidebar.bind(this);
-    this.addFormItem = this.addFormItem.bind(this);
+    // this.addFormItem = this.addFormItem.bind(this);
 
     Dispatcher.register(this.registerToActions.bind(this));
-    Dispatcher.register(this.addFormItem.bind(this));
+    // Dispatcher.register(this.addFormItem.bind(this));
   }
 
   registerToActions({ actionType, payload }) {
@@ -34,23 +39,26 @@ class Store extends EventEmitter {
   toggleSidebar() {
     _store.menuVisible = !_store.menuVisible;
     this.emit(Constants.CHANGE);
-  }
+  };
 
-  addFormItem(actionType, payload) {
-    // debugger;
-    switch (actionType) {
-      case Constants.ADD_ITEM:
-        _store.formItems = [..._store.formItems, payload];
-        break;
-      default:
-    }
-  }
+  // addFormItem(actionType, payload) {
+  //   // _store.formItems = [..._store.formItems, payload];
+  //   // this.emit(Constants.ADD_ITEM);
+  //   console.log('here');
+  //   switch (actionType) {
+  //     case Constants.ADD_ITEM:
+  //       _store.formItems = [..._store.formItems, payload];
+  //       // this.emit(Constants.ADD_ITEM);
+  //       break;
+  //     default:
+  //   }
+  // }
 
-  // edit
-  getFormItems() {
-    return _store.formItems;
-  }
-  //
+  // // edit
+  // getFormItems() {
+  //   return _store.formItems;
+  // }
+  // //
 
   getMenuState() {
     return _store.menuVisible;
@@ -58,6 +66,14 @@ class Store extends EventEmitter {
 
   getSidebarItems() {
     return _store.navItems;
+  }
+
+  getDietitianSidebarItems() {
+    return _store.dietitianNavItems;
+  }
+
+  getPatientSidebarItems() {
+    return _store.patientNavItems;
   }
 
   addChangeListener(callback) {

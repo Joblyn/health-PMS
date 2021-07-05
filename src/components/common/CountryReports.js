@@ -84,7 +84,7 @@ class CountryReports extends React.Component {
             {/* View Full Report */}
             <Col className="text-right view-report">
               {/* eslint-disable-next-line */}
-              <a href="#">View full report &rarr;</a>
+              <a>View full report &rarr;</a>
             </Col>
           </Row>
         </CardFooter>

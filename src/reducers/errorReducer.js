@@ -1,14 +1,15 @@
-import { GET_ERRORS, NO_ERRORS } from "../actions/Types";
+import * as ActionTypes from "../actions/Types";
 import { errors } from "./initialState";
 
-export default function(state = errors, action) {
+export default function errorReducer(state = errors, action) {
   switch (action.type) {
-    case GET_ERRORS:
+    case ActionTypes.GET_ERRORS:
+      // alert('An error occured please check internet  connection and try again');
       return {
         isError: true,
         data: action.payload,
       };
-    case NO_ERRORS:
+    case ActionTypes.NO_ERRORS:
       return {
         isError: false,
         data: action.payload,

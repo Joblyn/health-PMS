@@ -52,7 +52,7 @@ const TopReferrals = ({ title, referralData }) => (
         {/* View Full Report */}
         <Col className="text-right view-report">
           {/* eslint-disable-next-line */}
-          <a href="#">Full report &rarr;</a>
+          <a >Full report &rarr;</a>
         </Col>
       </Row>
     </CardFooter>
