@@ -51,7 +51,7 @@ export default function CompanyPatients() {
         className="m-0"
       >
         {patients && patients.length ? (
-          patients.map((patient, i) => {
+          patients.reverse().map((patient, i) => {
             return (
               <Col className="p-0" key={`patient-${i + 1}`}>
                 <Card small className="p-3">
@@ -62,7 +62,7 @@ export default function CompanyPatients() {
                           position: "absolute",
                           top: "10px",
                           right: "10px",
-                          color: "#52b5e9",
+                          color: "#660066",
                         }}
                       >
                         {patient.Dietitian !== undefined
@@ -109,7 +109,7 @@ export default function CompanyPatients() {
                           // whiteSpace: "nowrap",
                           overflow: "hidden",
                           textOverflow: "ellipsis",
-                          lineClamp: "2",
+                          // lineClamp: "2",
                         }}
                         className="mb-2"
                       >

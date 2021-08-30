@@ -1,7 +1,6 @@
 export const GET_ERRORS = 'GET_ERRORS';
 export const NO_ERRORS = 'NO_ERRORS';
 
-export const GET_STATS = 'GET_STATS';
 // authentication
 export const GET_ALL_COMPANIES = 'GET_ALL_COMPANIES';
 export const REGISTER_COMPANY_FAIL = 'REGISTER_COMPANY_FAIL';

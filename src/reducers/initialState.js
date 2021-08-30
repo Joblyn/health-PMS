@@ -167,8 +167,3 @@ export const deleteAppointment = {
   isSuccessful: false,
   data: null
 }
-
-export const getStats = {
-  isSuccessful: false,
-  data: null
-}

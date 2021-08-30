@@ -4,6 +4,7 @@ import { Card, CardHeader, Col, FormGroup } from "shards-react";
 
 import formItems from "../../data/form-items";
 import { addFormItem } from "../../actions/dietician/patient";
+import { useMediaQuery } from "react-responsive";
 
 export default function FormItemCatalogue({ show, setShow }) {
   const dispatch = useDispatch();
@@ -11,6 +12,7 @@ export default function FormItemCatalogue({ show, setShow }) {
   const addItem = (item) => {
     dispatch(addFormItem(item));
   };
+  const isSmallViewPort = useMediaQuery({ query: "max-width: 700px" });
 
   return (
     <Col
@@ -21,7 +23,7 @@ export default function FormItemCatalogue({ show, setShow }) {
         boxShadow: "none",
         maxHeight: "100vh",
         width: "100%",
-        maxWidth: "309px",
+        maxWidth: "309px"
       }}
     >
       <span
@@ -49,6 +51,7 @@ export default function FormItemCatalogue({ show, setShow }) {
                 "border-bottom"} p-3 m-0 cursor-pointer form-item`}
               onClick={() => {
                 addItem(item);
+                isSmallViewPort && setShow(false);
               }}
               key={`item-${i + 1}`}
             >
@@ -60,12 +63,12 @@ export default function FormItemCatalogue({ show, setShow }) {
               </label>
               <item.component
                 type={item.type}
-                options={item.options}
+                options={item.default}
                 disabled
                 key={`item-${i + 1}`}
                 className="bg-white cursor-pointer"
                 kind="non-edit"
-                placeholder={item.placeholder ? item.placeholder : ''}
+                placeholder={item.placeholder ? item.placeholder : ""}
               />
             </FormGroup>
           );

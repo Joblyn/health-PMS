@@ -1,10 +1,12 @@
 import React from "react";
 import { Col, Row } from "shards-react";
 import { Link, 
+  // useHistory 
 } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 export default function Interface() {
+  // const history = useHistory();
   const authState = useSelector((state) => state.authState);
   console.log(authState);
   return (
@@ -32,7 +34,7 @@ export default function Interface() {
             <div
               className="home-link d-flex flex-column align-items-center btn"
               style={{
-                border: "1px solid  #52b5e9",
+                border: "1px solid  #660066",
                 width: "160px",
                 height: "200px",
               }}
@@ -44,7 +46,7 @@ export default function Interface() {
                 width="120px"
                 height="auto"
                 src={require("../images/avatars/portrait.jpg")}
-                alt="health.workcradle"
+                alt="tnnafrica.workcradle"
               />
               <p
                 style={{
@@ -66,7 +68,7 @@ export default function Interface() {
             <div
               className="home-link d-flex flex-column align-items-center btn"
               style={{
-                border: "1px solid  #52b5e9",
+                border: "1px solid  #660066",
                 width: "160px",
                 height: "200px",
               }}
@@ -78,7 +80,7 @@ export default function Interface() {
                 width="120px"
                 height="auto"
                 src={require("../images/avatars/portrait.jpg")}
-                alt="health.workcradle"
+                alt="tnnafrica.workcradle"
               />
               <p
                 style={{
@@ -100,7 +102,7 @@ export default function Interface() {
             <div
               className="d-flex flex-column align-items-center btn"
               style={{
-                border: "1px solid  #52b5e9",
+                border: "1px solid  #660066",
                 width: "160px",
                 height: "200px",
               }}

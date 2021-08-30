@@ -48,7 +48,6 @@ import AdminDietPlans from "./pages/admin/DietPlans";
 import PatientAppointments from './pages/patient/Appointments';
 import IntakeForm from "./pages/patient/IntakeForm";
 import IntakeInfo from "./pages/patient/intakeInfo";
-import Dashbooard from "./pages/superadmin/dashboard";
 
 
 export default [
@@ -70,6 +69,7 @@ export default [
   //   component: RegisterCompany,
   // },
 
+  // superadmin routes
   {
     path: "/admin/login",
     layout: Plain,
@@ -85,13 +85,6 @@ export default [
     layout: Plain,
     component: PatientLogin,
   },
-  // superadmin routes
-  {
-    path: "/superadmin/dashboard",
-    layout: DefaultLayout,
-    component: Dashbooard,
-  },
-  // admin routes
   {
     path: "/admin/dashboard",
     layout: DefaultLayout,

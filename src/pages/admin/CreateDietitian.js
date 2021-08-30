@@ -20,7 +20,8 @@ import {
 // import { useHistory } from "react-router";
 
 export default function CreateDietitian() {
-  let companyCode = JSON.parse(localStorage.getItem("loggedInUser")).companyCode;
+  let companyCode = JSON.parse(localStorage.getItem("loggedInUser"))
+    .companyCode;
   const dispatch = useDispatch();
   const createDietitianState = useSelector((state) => state.createDietitian);
   const [success, setSuccess] = useState(false);
@@ -190,7 +191,7 @@ export default function CreateDietitian() {
               </p>
             </FormGroup>
             <FormGroup>
-            <label htmlFor="confirmPassword">Confirm Password</label>
+              <label htmlFor="confirmPassword">Confirm Password</label>
               <FormInput
                 required
                 onChange={handleChange}

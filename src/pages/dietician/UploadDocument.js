@@ -31,7 +31,6 @@ export default function UploadDocument() {
   const [docName, setDocName] = useState();
 
   useEffect(() => {
-    console.log(dietitian);
     let endpoint = getPatients + dietitian.companyCode;
     dispatch(getAllPatients(endpoint));
   }, []);
@@ -50,8 +49,6 @@ export default function UploadDocument() {
     e.preventDefault();
     const formData = new FormData();
     const inpFile = document.getElementById("file");
-    console.log(inpFile.files[0]);
-    console.log(createdFor);
 
     formData.append("docName", docName);
     formData.append("fileUpload", inpFile.files[0]);
@@ -60,8 +57,8 @@ export default function UploadDocument() {
     formData.append("companyCode", `${dietitian.companyCode}`);
     formData.append("docType", "document");
 
-    let localUrl = "https://dev-workcradle.herokuapp.com/api/";
-    let prodUrl = "https://dev-workcradle.herokuapp.com/api/";
+    let localUrl = "https://workcradle.herokuapp.com/api/";
+    let prodUrl = "https://workcradle.herokuapp.com/api/";
     let baseUrl = process.env.NODE_ENV === "production" ? prodUrl : localUrl;
     const endpoint = baseUrl + createDocument;
     const token = JSON.parse(localStorage.getItem("tokens")).access.token;
@@ -76,11 +73,8 @@ export default function UploadDocument() {
         Authorization: bearerToken,
       },
     })
-      .then((res) => {
-        console.log(res);
-        return res.json();
-      })
-      .then((data) => {
+      .then(res => res.json())
+      .then(data => {
         nProgress.done();
         nProgress.remove();
         console.log(data);

@@ -44,7 +44,7 @@ export default function Landing() {
                     fontSize: "1.2rem",
                     width: "200px",
                     height: "200px",
-                    border: "1px solid #52b5e9",
+                    border: "1px solid #660066",
                   }}
                 >
                   {item.name}
@@ -60,7 +60,7 @@ export default function Landing() {
                     fontSize: "1.2rem",
                     width: "200px",
                     height: "200px",
-                    border: "1px solid #52b5e9",
+                    border: "1px solid #660066",
                     boxShadow: "none"
                   }}
                 >
