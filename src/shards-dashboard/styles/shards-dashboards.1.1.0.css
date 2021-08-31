@@ -57,7 +57,7 @@ a {
   color: #52b5e9;
   text-decoration: none; }
   a:hover {
-    color: #0056b3;
+    color: #52b5e9;
     text-decoration: underline; }
 
 b, strong {
@@ -1119,7 +1119,7 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
   font-weight: 300;
   color: #52b5e9; }
   .btn-link:hover {
-    color: #0056b3;
+    color: #52b5e9;
     text-decoration: underline; }
   .btn-link:focus, .btn-link.focus {
     text-decoration: underline; }
@@ -2318,7 +2318,7 @@ i.material-icons {
   margin: 0;
   transition: all 250ms cubic-bezier(0.27, 0.01, 0.38, 1.06); }
   .page-link:hover, .page-link:focus {
-    color: #0056b3;
+    color: #52b5e9;
     background-color: #f5f5f6;
     border-color: #dfe1e3; }
 
@@ -3752,7 +3752,7 @@ body {
 a {
   color: #52b5e9; }
   a:hover {
-    color: #0056b3; }
+    color: #52b5e9; }
 
 label {
   font-weight: 400; }

@@ -1,7 +1,8 @@
 import React from "react";
 import { Col, Row } from "shards-react";
-import { Link, 
-  // useHistory 
+import {
+  Link
+  // useHistory
 } from "react-router-dom";
 import { useSelector } from "react-redux";
 
@@ -19,7 +20,7 @@ export default function Interface() {
         className="page-header py-4 px-4 bg-white card"
         style={{
           width: " 100%",
-          maxWidth: "600px",
+          maxWidth: "600px"
         }}
       >
         <h2 className="mb-3" style={{ fontWeight: "600" }}>
@@ -27,16 +28,13 @@ export default function Interface() {
         </h2>
         <h4 className="mb-4 text-left">Continue as:</h4>
         <Row className="d-flex justify-content-center">
-        <Link
-            to="/admin/login"
-            className="m-3"
-          >
+          <Link to="/admin/login" className="m-3">
             <div
               className="home-link d-flex flex-column align-items-center btn"
               style={{
                 border: "1px solid  #52b5e9",
                 width: "160px",
-                height: "200px",
+                height: "200px"
               }}
             >
               <img
@@ -53,7 +51,7 @@ export default function Interface() {
                   textAlign: "center",
                   fontWeight: "500",
                   fontSize: "1.2rem",
-                  color: "#3d5170",
+                  color: "#3d5170"
                 }}
                 className="my-2 card-header"
               >
@@ -61,16 +59,13 @@ export default function Interface() {
               </p>
             </div>
           </Link>
-          <Link
-            to="/dietitian/login"
-            className="m-3"
-          >
+          <Link to="/dietitian/login" className="m-3">
             <div
               className="home-link d-flex flex-column align-items-center btn"
               style={{
                 border: "1px solid  #52b5e9",
                 width: "160px",
-                height: "200px",
+                height: "200px"
               }}
             >
               <img
@@ -87,7 +82,7 @@ export default function Interface() {
                   textAlign: "center",
                   fontWeight: "500",
                   fontSize: "1.2rem",
-                  color: "#3d5170",
+                  color: "#3d5170"
                 }}
                 className="my-2 card-header"
               >
@@ -95,16 +90,13 @@ export default function Interface() {
               </p>
             </div>
           </Link>
-          <Link
-            to="/patient/login"
-            className="m-3"
-          >
+          <Link to="/patient/login" className="m-3">
             <div
               className="d-flex flex-column align-items-center btn"
               style={{
                 border: "1px solid  #52b5e9",
                 width: "160px",
-                height: "200px",
+                height: "200px"
               }}
             >
               <img
@@ -121,7 +113,7 @@ export default function Interface() {
                   textAlign: "center",
                   fontWeight: "500",
                   fontSize: "1.2rem",
-                  color: "#3d5170",
+                  color: "#3d5170"
                 }}
                 className="my-2 card-header"
               >
@@ -129,8 +121,12 @@ export default function Interface() {
               </p>
             </div>
           </Link>
-          {/* </Col> */}
         </Row>
+        <Col className="text-right mt-3">
+          <Link to="/register_company" className="text-decoration-none">
+            Register a new company
+          </Link>
+        </Col>
       </Row>
     </Col>
   );

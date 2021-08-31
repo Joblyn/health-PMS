@@ -52,13 +52,13 @@ import IntakeInfo from "./pages/patient/intakeInfo";
 
 export default [
   {
-    path: "/",
+    path: "/companies",
     exact: true,
     layout: Plain,
     component: Landing,
   },
   {
-    path: "/interface",
+    path: "/",
     exact: true,
     layout: Plain,
     component: Interface,
