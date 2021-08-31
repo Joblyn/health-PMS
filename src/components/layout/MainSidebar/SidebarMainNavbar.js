@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Navbar, NavbarBrand } from "shards-react";
 
 import { Dispatcher, Constants } from "../../../flux";
-import logo from "../../../images/logo.jpg";
+import logo from "../../../images/logo.png";
 
 class SidebarMainNavbar extends React.Component {
   constructor(props) {
@@ -28,16 +28,15 @@ class SidebarMainNavbar extends React.Component {
         >
           <NavbarBrand
             className="w-100 mr-0 p-0"
-            // href=""
             style={{ lineHeight: "25px" }}
           >
             <div className="d-table m-auto">
               <img
                 id="main-logo"
                 className="d-inline-block align-middle mx-auto"
-                style={{ maxWidth: "90px" }}
+                style={{ maxWidth: "120px" }}
                 src={logo}
-                alt="tnnafrica"
+                alt="health"
               />
               {!hideLogoText && (
                 <span className="d-none d-md-inline ml-1">
@@ -50,7 +49,7 @@ class SidebarMainNavbar extends React.Component {
           <div
             className="toggle-sidebar d-sm-inline d-md-none d-lg-none"
             onClick={this.handleToggleSidebar}
-            style={{ color: "#660066" }}
+            style={{ color: "#52b5e9" }}
           >
             <i className="material-icons">&#xE5C4;</i>
           </div>

@@ -7,8 +7,8 @@ import {
   InputGroupText
 } from "shards-react";
 
-export default () => (
-  <Form className="main-sidebar__search w-100 border-right d-sm-flex d-md-none d-lg-none" style={{ display: "flex", minHeight: "45px" }}>
+export default ({ homePage, setSearchTerm }) => (
+  <Form className={`main-sidebar__search border-right d-sm-flex ${ !homePage ? 'd-md-none d-lg-none w-100' : ''}`} style={{ display: "flex", minHeight: "45px", width: `${homePage && '100%'}`, maxWidth: `${homePage && '400px'}`}}>
     <InputGroup seamless className="ml-3">
       <InputGroupAddon type="prepend">
         <InputGroupText>
@@ -16,8 +16,9 @@ export default () => (
         </InputGroupText>
         <FormInput
           className="navbar-search"
-          placeholder="Search for something..."
+          placeholder={!homePage ? "Search for something..." : 'Search company name'}
           aria-label="Search"
+          onChange = {({ target }) => setSearchTerm(target.value)}
         />
       </InputGroupAddon>
     </InputGroup>

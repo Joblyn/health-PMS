@@ -442,8 +442,8 @@ const PatientDetails = () => {
                         position: "absolute",
                         top: "10px",
                         right: "15px",
-                        color: "#660066",
-                        border: "1px solid #660066",
+                        color: "#52b5e9",
+                        border: "1px solid #52b5e9",
                         borderRadius: "50px",
                       }}
                       className="py-1 px-2"

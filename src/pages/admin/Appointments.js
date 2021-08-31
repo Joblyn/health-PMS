@@ -108,6 +108,10 @@ export default function Appointments() {
   };
 
   const [updated, setUpdated] = useState(false);
+  
+  // edit when allowing appointments 
+  setUpdated('');
+
 
   // const onUpdateAppointment = (id, type) => {
   //   const payload = { ...appointments[id].Appointment };

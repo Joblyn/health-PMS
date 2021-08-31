@@ -28,7 +28,6 @@ export default function Patients() {
         (item) => item.Patient.assignedDietitian === dietitian.id
       )
     );
-    console.log(allPatients);
   }, [allPatients]);
 
   if (!patients) {
@@ -66,7 +65,7 @@ export default function Patients() {
                           position: "absolute",
                           top: "10px",
                           right: "10px",
-                          color: "#660066",
+                          color: "#52b5e9",
                         }}
                       >
                         {patient.PassignedDietitian !== undefined

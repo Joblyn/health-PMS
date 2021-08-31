@@ -1,8 +1,8 @@
 {
-  "name": "tnnafrica.workcradle",
+  "name": "health.workcradle",
   "version": "1.0.0",
   "private": true,
-  "homepage": "http://tnnafrica.workcradle.com/",
+  "homepage": "http://health.workcradle.com/",
   "dependencies": {
     "axios": "^0.21.1",
     "camelize": "^1.0.0",

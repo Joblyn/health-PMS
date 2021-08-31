@@ -34,7 +34,7 @@ export default function Interface() {
             <div
               className="home-link d-flex flex-column align-items-center btn"
               style={{
-                border: "1px solid  #660066",
+                border: "1px solid  #52b5e9",
                 width: "160px",
                 height: "200px",
               }}
@@ -46,7 +46,7 @@ export default function Interface() {
                 width="120px"
                 height="auto"
                 src={require("../images/avatars/portrait.jpg")}
-                alt="tnnafrica.workcradle"
+                alt="health.workcradle"
               />
               <p
                 style={{
@@ -68,7 +68,7 @@ export default function Interface() {
             <div
               className="home-link d-flex flex-column align-items-center btn"
               style={{
-                border: "1px solid  #660066",
+                border: "1px solid  #52b5e9",
                 width: "160px",
                 height: "200px",
               }}
@@ -80,7 +80,7 @@ export default function Interface() {
                 width="120px"
                 height="auto"
                 src={require("../images/avatars/portrait.jpg")}
-                alt="tnnafrica.workcradle"
+                alt="health.workcradle"
               />
               <p
                 style={{
@@ -102,7 +102,7 @@ export default function Interface() {
             <div
               className="d-flex flex-column align-items-center btn"
               style={{
-                border: "1px solid  #660066",
+                border: "1px solid  #52b5e9",
                 width: "160px",
                 height: "200px",
               }}

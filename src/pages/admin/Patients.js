@@ -62,7 +62,7 @@ export default function CompanyPatients() {
                           position: "absolute",
                           top: "10px",
                           right: "10px",
-                          color: "#660066",
+                          color: "#52b5e9",
                         }}
                       >
                         {patient.Dietitian !== undefined

@@ -68,7 +68,6 @@ export default function PatientDetails() {
   useEffect(() => {
     let endpoint = getPatientByIdEndpoint + patientId;
     dispatch(getPatientByIdAction(endpoint));
-    console.log(endpoint);
   }, []);
 
   useEffect(() => {
@@ -113,7 +112,6 @@ export default function PatientDetails() {
 
   const submitChanges = () => {
     let endpoint = editPatientEndpoint + patientId;
-    console.log(endpoint);
     delete control.createdAt;
     delete control.updatedAt;
     delete control.id;
@@ -124,7 +122,6 @@ export default function PatientDetails() {
       age: `${control.age}`,
       weight: `${control.weight}`,
     };
-    console.log(payload);
     dispatch(editPatient(endpoint, payload));
     setEditted(true);
   };
@@ -146,7 +143,6 @@ export default function PatientDetails() {
 
   const deletePatient = () => {
     let endpoint = deletePatientEndpoint + patientId;
-    console.log(endpoint);
     dispatch(deletePatientAction(endpoint));
     setDeleted(true);
   };

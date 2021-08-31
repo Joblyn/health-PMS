@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Container,
   Button,
@@ -13,8 +13,8 @@ import {
   Alert,
   FormFeedback
 } from "shards-react";
-// import { useHistory } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 
 import { createCompany } from "../../apiConstants/apiConstants";
 import { registerCompany } from "../../actions/superadmin/authAction";
@@ -23,27 +23,27 @@ export default function RegisterCompany() {
   const [control, setControl] = useState({ companyType: "Health" });
   const [errorMessage, setErrorMessage] = useState(false);
   const [success, setSuccess] = useState(false);
-  // const superadminAuth = useSelector((state) => state.superAdminAuth);
+  const superadminAuth = useSelector((state) => state.superAdminAuth);
   const dispatch = useDispatch();
-  // const history = useHistory();
+  const history = useHistory();
 
-  // useEffect(() => {
-  //   if (superadminAuth.isRegistered) {
-  //     setSuccess(true);
-  //     setErrorMessage(false)
-  //   } else {  
-  //     setErrorMessage(superadminAuth.error);
-  //   }
-  // }, [superadminAuth]);
+  useEffect(() => {
+    if (superadminAuth.isRegistered) {
+      setSuccess(true);
+      setErrorMessage(false)
+    } else {  
+      setErrorMessage(superadminAuth.error);
+    }
+  }, [superadminAuth]);
 
-  // useEffect(() => {
-  //   if (success) {
-  //     setTimeout(() => {
-  //       setSuccess(false);
-  //       history.push("/interface");
-  //     }, 3000);
-  //   }
-  // }, [success]);
+  useEffect(() => {
+    if (success) {
+      setTimeout(() => {
+        setSuccess(false);
+        history.push("/admin/login");
+      }, 4000);
+    }
+  }, [success]);
 
   const handleChange = ({ target }) => {
     if (target.dataset.kind === "address") {
@@ -83,7 +83,7 @@ export default function RegisterCompany() {
       {success && (
         <Container fluid className="px-0 sticky-top">
           <Alert className="mb-0 text-center">
-            <i className="fa fa-info mx-2"></i>Company Registered!
+            <i className="fa fa-info mx-2"></i>Company Registered! You will be redirected to log in as admin.
           </Alert>
         </Container>
       )}
@@ -224,7 +224,7 @@ export default function RegisterCompany() {
           </Col>
           <Col className="m-0 p-0">
             <CardHeader className="border-bottom" style={{ fontSize: "1rem" }}>
-              <h6 className="m-0">SuperAdmin Details</h6>
+              <h6 className="m-0">Admin Details</h6>
             </CardHeader>
             <ListGroup flush>
               <ListGroupItem className="p-3">

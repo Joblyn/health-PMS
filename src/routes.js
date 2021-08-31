@@ -18,8 +18,8 @@ import RegisterPatient from "./pages/dietician/RegisterPatient";
 import UploadDietPlan from "./pages/dietician/UploadDietPlan";
 import Patients from "./pages/dietician/Patients";
 import CreateProgressFlowIntakeForm from "./pages/dietician/CreateProgressFlowIntakeForm.js";
-// import Landing from "./pages/Landing";
-// import RegisterCompany from "./pages/superadmin/RegisterCompany";
+import Landing from "./pages/Landing";
+import RegisterCompany from "./pages/admin/RegisterCompany";
 import SuperAdminLogin from "./pages/admin/Login";
 import CompanyPatients from "./pages/admin/Patients";
 import CreateDietitian from "./pages/admin/CreateDietitian";
@@ -51,23 +51,23 @@ import IntakeInfo from "./pages/patient/intakeInfo";
 
 
 export default [
-  // {
-  //   path: "/",
-  //   exact: true,
-  //   layout: Plain,
-  //   component: Landing,
-  // },
   {
     path: "/",
     exact: true,
     layout: Plain,
+    component: Landing,
+  },
+  {
+    path: "/interface",
+    exact: true,
+    layout: Plain,
     component: Interface,
   },
-  // {
-  //   path: "/register_company",
-  //   layout: Plain,
-  //   component: RegisterCompany,
-  // },
+  {
+    path: "/register_company",
+    layout: Plain,
+    component: RegisterCompany,
+  },
 
   // superadmin routes
   {

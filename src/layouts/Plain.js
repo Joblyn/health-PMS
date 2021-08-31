@@ -1,7 +1,7 @@
 import React from "react";
 import { Container } from "shards-react";
 import { Link, Redirect } from "react-router-dom";
-import logo from "../images/logo.jpg";
+import logo from "../images/logo.png";
 
 export default function Plain({ children }) {
   const authState = JSON.parse(localStorage.getItem('loggedInUser'))
@@ -17,9 +17,9 @@ export default function Plain({ children }) {
           <img
             id="main-logo"
             className="d-inline-block align-middle mx-auto"
-            style={{ maxWidth: "90px" }}
+            style={{ maxWidth: "120px" }}
             src={logo}
-            alt="tnnafrica"
+            alt="health"
           />
         </Link>
       </div>
