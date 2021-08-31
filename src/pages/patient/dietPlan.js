@@ -118,7 +118,7 @@ export default function PatientDietPlan() {
       <Row noGutters className="page-header py-4 d-flex align-items-center">
         <PageTitle
           sm="4"
-          title="Library"
+          title="Documents"
           subtitle="Dashboard"
           className="text-sm-left"
         />

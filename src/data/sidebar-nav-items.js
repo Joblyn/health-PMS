@@ -21,7 +21,7 @@ export const getPatientNavItems = () => {
       to: "/patient/diet_plan"
     },
     {
-      title: "Library",
+      title: "Documents",
       htmlBefore: "<i class='material-icons'>folder</i>",
       to: `/patient/documents`,
     },
@@ -41,7 +41,7 @@ export const getPatientNavItems = () => {
       to: `/patient/appointments`,
     },
     // {
-    //   title: "Library",
+    //   title: "Documents",
     //   htmlBefore: "<i class='material-icons'>upload_file</i>",
     //   to: `/patient/upload_document`,
     // },
@@ -91,7 +91,7 @@ export const getDietitianNavItems = () => {
       to: `/dietitian/upload_document`,
     },
     {
-      title: "Library",
+      title: "Documents",
       htmlBefore: "<i class='material-icons'>folder</i>",
       to: `/dietitian/documents`,
     },
@@ -156,7 +156,7 @@ export function getAdminNavItems() {
     //   to: `/admin/upload_diet_plan`,
     // },
     {
-      title: "Library",
+      title: "Documents",
       htmlBefore: "<i class='material-icons'>folder</i>",
       to: `/admin/documents`,
     },
