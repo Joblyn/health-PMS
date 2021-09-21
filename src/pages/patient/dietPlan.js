@@ -36,7 +36,6 @@ export default function PatientDietPlan() {
   }, []);
 
   useEffect(() => {
-    console.log(documents);
     documents.data &&
       setDocumentsState(
         documents.data.filter(
@@ -46,7 +45,6 @@ export default function PatientDietPlan() {
         )
       );
   }, [documents]);
-  console.log(documentsState);
 
   useEffect(() => {
     documentsState && setSearchItems(documentsState);
@@ -118,7 +116,7 @@ export default function PatientDietPlan() {
       <Row noGutters className="page-header py-4 d-flex align-items-center">
         <PageTitle
           sm="4"
-          title="Documents"
+          title="Library"
           subtitle="Dashboard"
           className="text-sm-left"
         />

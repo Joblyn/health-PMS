@@ -36,7 +36,6 @@ export default function DietitianDietPlans() {
   }, []);
 
   useEffect(() => {
-    console.log(documents);
     documents.data &&
       setDocumentsState(
         documents.data.filter(
@@ -114,7 +113,7 @@ export default function DietitianDietPlans() {
       <Row noGutters className="page-header py-4 d-flex align-items-center">
         <PageTitle
           sm="4"
-          title="Documents"
+          title="Library"
           subtitle="Dashboard"
           className="text-sm-left"
         />

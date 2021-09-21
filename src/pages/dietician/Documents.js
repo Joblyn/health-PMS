@@ -114,7 +114,7 @@ export default function DietitianDocuments() {
       <Row noGutters className="page-header py-4 d-flex align-items-center">
         <PageTitle
           sm="4"
-          title="Documents"
+          title="Library"
           subtitle="Dashboard"
           className="text-sm-left"
         />
